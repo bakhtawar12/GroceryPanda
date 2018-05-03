@@ -1,0 +1,6 @@
+D:\Grocery Panda\GroceryPanda\GroceryPandaService\GroceryPandaService\bin\GroceryPandaService.dll.config
+D:\Grocery Panda\GroceryPanda\GroceryPandaService\GroceryPandaService\bin\GroceryPandaService.dll
+D:\Grocery Panda\GroceryPanda\GroceryPandaService\GroceryPandaService\bin\GroceryPandaService.pdb
+D:\Grocery Panda\GroceryPanda\GroceryPandaService\GroceryPandaService\obj\Debug\GroceryPandaService.csprojResolveAssemblyReference.cache
+D:\Grocery Panda\GroceryPanda\GroceryPandaService\GroceryPandaService\obj\Debug\GroceryPandaService.dll
+D:\Grocery Panda\GroceryPanda\GroceryPandaService\GroceryPandaService\obj\Debug\GroceryPandaService.pdb

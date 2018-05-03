@@ -1,0 +1,11 @@
+D:\Grocery Panda\Grocery_Panda\Grocery_Panda\bin\Debug\Grocery_Panda.exe.config
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\bin\Debug\Grocery_Panda.exe.config
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\bin\Debug\Grocery_Panda.exe
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\bin\Debug\Grocery_Panda.pdb
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.csprojResolveAssemblyReference.cache
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmAdminRegistration.resources
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmMain.resources
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.Properties.Resources.resources
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.csproj.GenerateResource.Cache
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.exe
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.pdb

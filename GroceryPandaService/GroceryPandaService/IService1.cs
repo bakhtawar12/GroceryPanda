@@ -12,6 +12,8 @@ namespace GroceryPandaService
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        bool RegisterAdmin(string username, string passwrod, string contact, string question, string answer);
 
         [OperationContract]
         string GetData(int value);

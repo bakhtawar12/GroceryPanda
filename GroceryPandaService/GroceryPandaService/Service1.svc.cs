@@ -29,5 +29,19 @@ namespace GroceryPandaService
             }
             return composite;
         }
+
+        public bool RegisterAdmin(string username, string passwrod, string contact, string question, string answer)
+        {
+            if(AdminDL.Admin.Username == null)
+            {
+                AdminDL.Admin.Username = username;
+                AdminDL.Admin.Password = passwrod;
+                AdminDL.Admin.Contact_no = contact;
+                AdminDL.Admin.Question = question;
+                AdminDL.Admin.Answer = answer;
+                return true;
+            }
+            return false;
+        }
     }
 }
