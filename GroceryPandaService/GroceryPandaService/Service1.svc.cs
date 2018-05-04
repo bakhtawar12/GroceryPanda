@@ -62,5 +62,17 @@ namespace GroceryPandaService
             }
             return false;
         }
+
+        public bool registerUser(string username, string passwrod, string contact, string question, string answer)
+        {
+            User user = new User();
+            user.Username = username;
+            user.Password = passwrod;
+            user.Contact_no = contact;
+            user.Question = question;
+            user.Answer = answer;
+            UserDL.Users.Add(user);
+            return true;
+        }
     }
 }

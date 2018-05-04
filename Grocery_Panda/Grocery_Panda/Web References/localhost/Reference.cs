@@ -37,6 +37,8 @@ namespace Grocery_Panda.localhost {
         
         private System.Threading.SendOrPostCallback adminChangePasswordOperationCompleted;
         
+        private System.Threading.SendOrPostCallback registerUserOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -88,6 +90,9 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event adminChangePasswordCompletedEventHandler adminChangePasswordCompleted;
+        
+        /// <remarks/>
+        public event registerUserCompletedEventHandler registerUserCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -225,6 +230,44 @@ namespace Grocery_Panda.localhost {
             if ((this.adminChangePasswordCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.adminChangePasswordCompleted(this, new adminChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/registerUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void registerUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string username, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string passwrod, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string contact, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string question, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string answer, out bool registerUserResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool registerUserResultSpecified) {
+            object[] results = this.Invoke("registerUser", new object[] {
+                        username,
+                        passwrod,
+                        contact,
+                        question,
+                        answer});
+            registerUserResult = ((bool)(results[0]));
+            registerUserResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void registerUserAsync(string username, string passwrod, string contact, string question, string answer) {
+            this.registerUserAsync(username, passwrod, contact, question, answer, null);
+        }
+        
+        /// <remarks/>
+        public void registerUserAsync(string username, string passwrod, string contact, string question, string answer, object userState) {
+            if ((this.registerUserOperationCompleted == null)) {
+                this.registerUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregisterUserOperationCompleted);
+            }
+            this.InvokeAsync("registerUser", new object[] {
+                        username,
+                        passwrod,
+                        contact,
+                        question,
+                        answer}, this.registerUserOperationCompleted, userState);
+        }
+        
+        private void OnregisterUserOperationCompleted(object arg) {
+            if ((this.registerUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.registerUserCompleted(this, new registerUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -445,6 +488,40 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public bool adminChangePasswordResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void registerUserCompletedEventHandler(object sender, registerUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class registerUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal registerUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool registerUserResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool registerUserResultSpecified {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[1]));

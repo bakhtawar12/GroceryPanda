@@ -24,5 +24,12 @@ namespace Grocery_Panda
             reg.Show();
 
         }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            frmUserReg b = new frmUserReg();
+            this.Hide();
+            b.Show();
+        }
     }
 }
