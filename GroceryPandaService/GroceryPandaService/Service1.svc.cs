@@ -12,6 +12,16 @@ namespace GroceryPandaService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        public bool adminChangePassword(string question, string answer, string newPass)
+        {
+            if(AdminDL.Admin.Question == question && AdminDL.Admin.Answer == answer)
+            {
+                AdminDL.Admin.Password = newPass;
+                return true;
+            }
+            return false;
+        }
+
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -28,6 +38,15 @@ namespace GroceryPandaService
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public bool isValidAdmin(string name, string password)
+        {
+            if(AdminDL.Admin.Username == name && AdminDL.Admin.Password == password)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool RegisterAdmin(string username, string passwrod, string contact, string question, string answer)

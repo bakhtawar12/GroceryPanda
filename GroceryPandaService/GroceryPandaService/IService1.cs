@@ -19,6 +19,12 @@ namespace GroceryPandaService
         string GetData(int value);
 
         [OperationContract]
+        bool isValidAdmin(string name, string password);
+
+        [OperationContract]
+        bool adminChangePassword(string question, string answer, string newPass);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

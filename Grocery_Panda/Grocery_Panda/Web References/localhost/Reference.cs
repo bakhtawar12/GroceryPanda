@@ -33,6 +33,10 @@ namespace Grocery_Panda.localhost {
         
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
+        private System.Threading.SendOrPostCallback isValidAdminOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback adminChangePasswordOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -78,6 +82,12 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
+        
+        /// <remarks/>
+        public event isValidAdminCompletedEventHandler isValidAdminCompleted;
+        
+        /// <remarks/>
+        public event adminChangePasswordCompletedEventHandler adminChangePasswordCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -149,6 +159,72 @@ namespace Grocery_Panda.localhost {
             if ((this.GetDataCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetDataCompleted(this, new GetDataCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/isValidAdmin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void isValidAdmin([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, out bool isValidAdminResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool isValidAdminResultSpecified) {
+            object[] results = this.Invoke("isValidAdmin", new object[] {
+                        name,
+                        password});
+            isValidAdminResult = ((bool)(results[0]));
+            isValidAdminResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void isValidAdminAsync(string name, string password) {
+            this.isValidAdminAsync(name, password, null);
+        }
+        
+        /// <remarks/>
+        public void isValidAdminAsync(string name, string password, object userState) {
+            if ((this.isValidAdminOperationCompleted == null)) {
+                this.isValidAdminOperationCompleted = new System.Threading.SendOrPostCallback(this.OnisValidAdminOperationCompleted);
+            }
+            this.InvokeAsync("isValidAdmin", new object[] {
+                        name,
+                        password}, this.isValidAdminOperationCompleted, userState);
+        }
+        
+        private void OnisValidAdminOperationCompleted(object arg) {
+            if ((this.isValidAdminCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.isValidAdminCompleted(this, new isValidAdminCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/adminChangePassword", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void adminChangePassword([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string question, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string answer, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string newPass, out bool adminChangePasswordResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool adminChangePasswordResultSpecified) {
+            object[] results = this.Invoke("adminChangePassword", new object[] {
+                        question,
+                        answer,
+                        newPass});
+            adminChangePasswordResult = ((bool)(results[0]));
+            adminChangePasswordResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void adminChangePasswordAsync(string question, string answer, string newPass) {
+            this.adminChangePasswordAsync(question, answer, newPass, null);
+        }
+        
+        /// <remarks/>
+        public void adminChangePasswordAsync(string question, string answer, string newPass, object userState) {
+            if ((this.adminChangePasswordOperationCompleted == null)) {
+                this.adminChangePasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnadminChangePasswordOperationCompleted);
+            }
+            this.InvokeAsync("adminChangePassword", new object[] {
+                        question,
+                        answer,
+                        newPass}, this.adminChangePasswordOperationCompleted, userState);
+        }
+        
+        private void OnadminChangePasswordOperationCompleted(object arg) {
+            if ((this.adminChangePasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.adminChangePasswordCompleted(this, new adminChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -304,6 +380,74 @@ namespace Grocery_Panda.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void isValidAdminCompletedEventHandler(object sender, isValidAdminCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class isValidAdminCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal isValidAdminCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool isValidAdminResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool isValidAdminResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void adminChangePasswordCompletedEventHandler(object sender, adminChangePasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class adminChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal adminChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool adminChangePasswordResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool adminChangePasswordResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
             }
         }
     }
