@@ -8,6 +8,7 @@ namespace GroceryPandaService
     public class UserDL
     {
         private static List<User> users = new List<User>();
+        private static User current_user = new User();
 
         public static List<User> Users
         {
@@ -19,6 +20,19 @@ namespace GroceryPandaService
             set
             {
                 users = value;
+            }
+        }
+
+        public static User Current_user
+        {
+            get
+            {
+                return current_user;
+            }
+
+            set
+            {
+                current_user = value;
             }
         }
     }

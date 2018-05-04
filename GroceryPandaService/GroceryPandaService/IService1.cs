@@ -28,6 +28,12 @@ namespace GroceryPandaService
         bool registerUser(string username, string passwrod, string contact, string question, string answer);
 
         [OperationContract]
+        bool validUser(string username, string password);
+
+        [OperationContract]
+        bool userChangePassword(string username, string question, string answer, string newPass);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

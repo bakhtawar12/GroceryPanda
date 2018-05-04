@@ -35,5 +35,12 @@ namespace Grocery_Panda
                 txtAnswer.Text = "";
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmUserLogin f = new frmUserLogin();
+            this.Close();
+            f.Show();
+        }
     }
 }

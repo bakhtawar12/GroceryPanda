@@ -66,11 +66,23 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserLogin.Designer.cs">
+      <DependentUpon>frmUserLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUserReg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmUserReg.Designer.cs">
       <DependentUpon>frmUserReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserResetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserResetPass.Designer.cs">
+      <DependentUpon>frmUserResetPass.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,8 +103,14 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUserLogin.resx">
+      <DependentUpon>frmUserLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUserReg.resx">
       <DependentUpon>frmUserReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserResetPass.resx">
+      <DependentUpon>frmUserResetPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

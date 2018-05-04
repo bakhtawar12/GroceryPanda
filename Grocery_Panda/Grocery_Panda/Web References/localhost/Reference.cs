@@ -39,6 +39,10 @@ namespace Grocery_Panda.localhost {
         
         private System.Threading.SendOrPostCallback registerUserOperationCompleted;
         
+        private System.Threading.SendOrPostCallback validUserOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback userChangePasswordOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -93,6 +97,12 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event registerUserCompletedEventHandler registerUserCompleted;
+        
+        /// <remarks/>
+        public event validUserCompletedEventHandler validUserCompleted;
+        
+        /// <remarks/>
+        public event userChangePasswordCompletedEventHandler userChangePasswordCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -268,6 +278,74 @@ namespace Grocery_Panda.localhost {
             if ((this.registerUserCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.registerUserCompleted(this, new registerUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/validUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void validUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string username, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, out bool validUserResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool validUserResultSpecified) {
+            object[] results = this.Invoke("validUser", new object[] {
+                        username,
+                        password});
+            validUserResult = ((bool)(results[0]));
+            validUserResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void validUserAsync(string username, string password) {
+            this.validUserAsync(username, password, null);
+        }
+        
+        /// <remarks/>
+        public void validUserAsync(string username, string password, object userState) {
+            if ((this.validUserOperationCompleted == null)) {
+                this.validUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnvalidUserOperationCompleted);
+            }
+            this.InvokeAsync("validUser", new object[] {
+                        username,
+                        password}, this.validUserOperationCompleted, userState);
+        }
+        
+        private void OnvalidUserOperationCompleted(object arg) {
+            if ((this.validUserCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.validUserCompleted(this, new validUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/userChangePassword", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void userChangePassword([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string username, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string question, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string answer, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string newPass, out bool userChangePasswordResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool userChangePasswordResultSpecified) {
+            object[] results = this.Invoke("userChangePassword", new object[] {
+                        username,
+                        question,
+                        answer,
+                        newPass});
+            userChangePasswordResult = ((bool)(results[0]));
+            userChangePasswordResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void userChangePasswordAsync(string username, string question, string answer, string newPass) {
+            this.userChangePasswordAsync(username, question, answer, newPass, null);
+        }
+        
+        /// <remarks/>
+        public void userChangePasswordAsync(string username, string question, string answer, string newPass, object userState) {
+            if ((this.userChangePasswordOperationCompleted == null)) {
+                this.userChangePasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnuserChangePasswordOperationCompleted);
+            }
+            this.InvokeAsync("userChangePassword", new object[] {
+                        username,
+                        question,
+                        answer,
+                        newPass}, this.userChangePasswordOperationCompleted, userState);
+        }
+        
+        private void OnuserChangePasswordOperationCompleted(object arg) {
+            if ((this.userChangePasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.userChangePasswordCompleted(this, new userChangePasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -522,6 +600,74 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public bool registerUserResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void validUserCompletedEventHandler(object sender, validUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class validUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal validUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool validUserResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool validUserResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void userChangePasswordCompletedEventHandler(object sender, userChangePasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class userChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal userChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool userChangePasswordResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool userChangePasswordResultSpecified {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[1]));

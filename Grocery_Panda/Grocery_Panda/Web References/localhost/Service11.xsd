@@ -82,6 +82,38 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="validUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="validUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="validUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="userChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="question" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="answer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="userChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userChangePasswordResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>

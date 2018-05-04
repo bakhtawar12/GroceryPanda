@@ -65,6 +65,13 @@ namespace GroceryPandaService
 
         public bool registerUser(string username, string passwrod, string contact, string question, string answer)
         {
+            foreach(User u in UserDL.Users)
+            {
+                if(u.Username == username)
+                {
+                    return false;
+                }
+            }
             User user = new User();
             user.Username = username;
             user.Password = passwrod;
@@ -73,6 +80,35 @@ namespace GroceryPandaService
             user.Answer = answer;
             UserDL.Users.Add(user);
             return true;
+        }
+
+        public bool userChangePassword(string username, string question, string answer, string newPass)
+        {
+            foreach(User u in UserDL.Users)
+            {
+                if(u.Username == username)
+                {
+                    if(u.Question == question && u.Answer == answer)
+                    {
+                        u.Password = newPass;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool validUser(string username, string password)
+        {
+           foreach(User u in UserDL.Users)
+            {
+                if(u.Username == username && u.Password == password)
+                {
+                    UserDL.Current_user = u;
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
