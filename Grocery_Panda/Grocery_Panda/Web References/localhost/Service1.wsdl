@@ -79,6 +79,12 @@
   <wsdl:message name="IService1_getstore_OutputMessage">
     <wsdl:part name="parameters" element="tns:getstoreResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getproduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:getproduct" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getproduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getproductResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -133,6 +139,10 @@
     <wsdl:operation name="getstore">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getstore" message="tns:IService1_getstore_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getstoreResponse" message="tns:IService1_getstore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getproduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getproduct" message="tns:IService1_getproduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getproductResponse" message="tns:IService1_getproduct_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -242,6 +252,15 @@
     </wsdl:operation>
     <wsdl:operation name="getstore">
       <soap:operation soapAction="http://tempuri.org/IService1/getstore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getproduct">
+      <soap:operation soapAction="http://tempuri.org/IService1/getproduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

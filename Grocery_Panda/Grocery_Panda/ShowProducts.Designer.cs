@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.gvshowproducts = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvshowproducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,10 +66,20 @@
             // gvshowproducts
             // 
             this.gvshowproducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvshowproducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
             this.gvshowproducts.Location = new System.Drawing.Point(12, 99);
             this.gvshowproducts.Name = "gvshowproducts";
             this.gvshowproducts.Size = new System.Drawing.Size(240, 150);
             this.gvshowproducts.TabIndex = 5;
+            this.gvshowproducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvshowproducts_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Delete Product";
+            this.Column1.Name = "Column1";
+            this.Column1.Text = "Click Here";
+            this.Column1.UseColumnTextForLinkValue = true;
             // 
             // ShowProducts
             // 
@@ -94,5 +105,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView gvshowproducts;
+        private System.Windows.Forms.DataGridViewLinkColumn Column1;
     }
 }

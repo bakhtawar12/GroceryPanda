@@ -153,6 +153,24 @@ namespace GroceryPandaService
         {
             return StoreDL.Stores[index];
         }
+        public void getproduct(String s,Product pro)
+        {
+            int p = 0;
+            foreach(Store sto in StoreDL.Stores)
+            {
+                if(sto.Name == s)
+                {
+                    foreach(Product pi in sto.Products)
+                    {
+                        if (pi == pro)
+                        {
+                            p = sto.Products.IndexOf(pi);
+                            break;
+                        }
+                    }
+                    sto.Products.RemoveAt(p);
+                }
+            }
+        }
     }
-
 }

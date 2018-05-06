@@ -54,6 +54,8 @@ namespace Grocery_Panda.localhost {
         
         private System.Threading.SendOrPostCallback getstoreOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getproductOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -129,6 +131,9 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event getstoreCompletedEventHandler getstoreCompleted;
+        
+        /// <remarks/>
+        public event getproductCompletedEventHandler getproductCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -527,6 +532,36 @@ namespace Grocery_Panda.localhost {
             if ((this.getstoreCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getstoreCompleted(this, new getstoreCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getproduct", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void getproduct([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string s, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Product pro) {
+            this.Invoke("getproduct", new object[] {
+                        s,
+                        pro});
+        }
+        
+        /// <remarks/>
+        public void getproductAsync(string s, Product pro) {
+            this.getproductAsync(s, pro, null);
+        }
+        
+        /// <remarks/>
+        public void getproductAsync(string s, Product pro, object userState) {
+            if ((this.getproductOperationCompleted == null)) {
+                this.getproductOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetproductOperationCompleted);
+            }
+            this.InvokeAsync("getproduct", new object[] {
+                        s,
+                        pro}, this.getproductOperationCompleted, userState);
+        }
+        
+        private void OngetproductOperationCompleted(object arg) {
+            if ((this.getproductCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getproductCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1149,6 +1184,10 @@ namespace Grocery_Panda.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void getproductCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]

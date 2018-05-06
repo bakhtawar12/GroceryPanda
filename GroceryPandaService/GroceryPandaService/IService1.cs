@@ -54,6 +54,9 @@ namespace GroceryPandaService
 
         Store getstore(int index);
 
+        [OperationContract]
+
+        void getproduct(String s, Product pro);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);

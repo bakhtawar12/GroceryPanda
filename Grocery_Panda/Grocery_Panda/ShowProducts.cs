@@ -36,8 +36,31 @@ namespace Grocery_Panda
                     BindingSource source = new BindingSource();
                     source.DataSource = s.Products;
                     gvshowproducts.DataSource = source;
-                    gvshowproducts.Columns[2].Visible = false;
-                    gvshowproducts.Columns[4].Visible = false;
+                    
+                }
+            }
+        }
+
+        private void gvshowproducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            localhost.Service1 sc = new localhost.Service1();
+            localhost.Product p = new localhost.Product();
+            foreach(localhost.Store sto in sc.shoowstores())
+            {
+                if (sto.Name == comboBox1.Text)
+                {
+                    p=sto.Products[e.RowIndex];
+                }
+            }
+            sc.getproduct(comboBox1.Text, p);
+            foreach (localhost.Store s in sc.shoowstores())
+            {
+                if (s.Name == comboBox1.Text)
+                {
+                    BindingSource source = new BindingSource();
+                    source.DataSource = s.Products;
+                    gvshowproducts.DataSource = source;
+                    
                 }
             }
         }
