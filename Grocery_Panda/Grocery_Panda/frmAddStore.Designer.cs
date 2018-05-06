@@ -78,6 +78,7 @@
             this.lbProducts.TabIndex = 7;
             this.lbProducts.TabStop = true;
             this.lbProducts.Text = "Products";
+            this.lbProducts.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbProducts_LinkClicked);
             // 
             // btnAddStores
             // 

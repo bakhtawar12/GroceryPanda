@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Collections;
 
 namespace GroceryPandaService
 {
@@ -118,6 +119,21 @@ namespace GroceryPandaService
         public List<Store> shoowstores()
         {
             return StoreDL.Stores;
+        }
+
+        public void addStoreProducts(Store s,string name,int price1,int quantity1)
+        {
+            Product p = new Product();
+            p.Name = name;
+            p.Price = price1;
+            p.Quantity = quantity1;
+            foreach(Store sto in StoreDL.Stores)
+            {
+                if(sto.Name==s.Name && sto.Address == s.Address)
+                {
+                    sto.addproduct(p);
+                }
+            }
         }
     }
 

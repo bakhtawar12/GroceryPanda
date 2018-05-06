@@ -61,6 +61,12 @@
   <wsdl:message name="IService1_shoowstores_OutputMessage">
     <wsdl:part name="parameters" element="tns:shoowstoresResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addStoreProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:addStoreProducts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addStoreProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addStoreProductsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -103,6 +109,10 @@
     <wsdl:operation name="shoowstores">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/shoowstores" message="tns:IService1_shoowstores_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/shoowstoresResponse" message="tns:IService1_shoowstores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addStoreProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addStoreProducts" message="tns:IService1_addStoreProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addStoreProductsResponse" message="tns:IService1_addStoreProducts_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -185,6 +195,15 @@
     </wsdl:operation>
     <wsdl:operation name="shoowstores">
       <soap:operation soapAction="http://tempuri.org/IService1/shoowstores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addStoreProducts">
+      <soap:operation soapAction="http://tempuri.org/IService1/addStoreProducts" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

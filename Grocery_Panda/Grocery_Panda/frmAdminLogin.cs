@@ -138,7 +138,7 @@ namespace Grocery_Panda
                 if(valid)
                 {
                     MessageBox.Show("Welcome!");
-                    frmAddStore h = new frmAddStore();
+                    frmAdminHome h = new frmAdminHome();
                     this.Close();
                     h.Show();
                 } else

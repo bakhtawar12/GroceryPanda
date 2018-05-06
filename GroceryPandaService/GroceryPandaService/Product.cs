@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using System.Runtime.Serialization;
 namespace GroceryPandaService
 {
+    [DataContract]
     public class Product
     {
-        private string name;
-        private int price; 
-        private int quantity;
-
+        string name;
+        int price; 
+        int quantity;
+        [DataMember]
         public string Name
         {
             get
@@ -23,7 +24,7 @@ namespace GroceryPandaService
                 name = value;
             }
         }
-
+        [DataMember]
         public int Price
         {
             get
@@ -36,7 +37,7 @@ namespace GroceryPandaService
                 price = value;
             }
         }
-
+        [DataMember]
         public int Quantity
         {
             get

@@ -9,10 +9,10 @@ namespace GroceryPandaService
     public class Store
     {
         
-        private string name;
-        private string address;
-        private List<Product> products;
-        private List<User> customers;
+        string name;
+        string address;
+        List<Product> products=new List<Product>();
+        List<User> customers=new List<User>();
 
         [DataMember]
         public string Name
@@ -65,6 +65,14 @@ namespace GroceryPandaService
             {
                 address = value;
             }
+        }
+        public void addproduct(Product p)
+        { 
+            if(Products==null)
+            {
+                Products = new List<Product>();
+            }
+            Products.Add(p);
         }
     }
 }

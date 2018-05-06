@@ -43,6 +43,12 @@ namespace GroceryPandaService
         List<Store> shoowstores();
 
         [OperationContract]
+
+        void addStoreProducts(Store s, string name, int price1, int quantity1);
+
+        
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

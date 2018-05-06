@@ -48,6 +48,8 @@ namespace Grocery_Panda.localhost {
         
         private System.Threading.SendOrPostCallback shoowstoresOperationCompleted;
         
+        private System.Threading.SendOrPostCallback addStoreProductsOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -114,6 +116,9 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event shoowstoresCompletedEventHandler shoowstoresCompleted;
+        
+        /// <remarks/>
+        public event addStoreProductsCompletedEventHandler addStoreProductsCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -414,6 +419,44 @@ namespace Grocery_Panda.localhost {
             if ((this.shoowstoresCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.shoowstoresCompleted(this, new shoowstoresCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addStoreProducts", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addStoreProducts([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Store s, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, int price1, [System.Xml.Serialization.XmlIgnoreAttribute()] bool price1Specified, int quantity1, [System.Xml.Serialization.XmlIgnoreAttribute()] bool quantity1Specified) {
+            this.Invoke("addStoreProducts", new object[] {
+                        s,
+                        name,
+                        price1,
+                        price1Specified,
+                        quantity1,
+                        quantity1Specified});
+        }
+        
+        /// <remarks/>
+        public void addStoreProductsAsync(Store s, string name, int price1, bool price1Specified, int quantity1, bool quantity1Specified) {
+            this.addStoreProductsAsync(s, name, price1, price1Specified, quantity1, quantity1Specified, null);
+        }
+        
+        /// <remarks/>
+        public void addStoreProductsAsync(Store s, string name, int price1, bool price1Specified, int quantity1, bool quantity1Specified, object userState) {
+            if ((this.addStoreProductsOperationCompleted == null)) {
+                this.addStoreProductsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddStoreProductsOperationCompleted);
+            }
+            this.InvokeAsync("addStoreProducts", new object[] {
+                        s,
+                        name,
+                        price1,
+                        price1Specified,
+                        quantity1,
+                        quantity1Specified}, this.addStoreProductsOperationCompleted, userState);
+        }
+        
+        private void OnaddStoreProductsOperationCompleted(object arg) {
+            if ((this.addStoreProductsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addStoreProductsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1002,6 +1045,10 @@ namespace Grocery_Panda.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void addStoreProductsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
