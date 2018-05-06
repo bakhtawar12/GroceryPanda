@@ -14,3 +14,5 @@ D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Pand
 D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmUserReg.resources
 D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmUserLogin.resources
 D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmUserResetPass.resources
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmAddStore.resources
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmAdminShowStore.resources

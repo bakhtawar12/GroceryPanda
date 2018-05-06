@@ -110,5 +110,15 @@ namespace GroceryPandaService
             }
             return false;
         }
+        public void addstore(Store sto)
+        {
+            StoreDL.Stores.Add(sto);
+        }
+
+        public List<Store> shoowstores()
+        {
+            return StoreDL.Stores;
+        }
     }
+
 }

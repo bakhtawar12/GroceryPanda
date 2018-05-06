@@ -34,6 +34,15 @@ namespace GroceryPandaService
         bool userChangePassword(string username, string question, string answer, string newPass);
 
         [OperationContract]
+
+        void addstore(Store sto);
+
+
+        [OperationContract]
+
+        List<Store> shoowstores();
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

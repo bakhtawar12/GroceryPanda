@@ -27,6 +27,7 @@ namespace Grocery_Panda.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Person))]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback RegisterAdminOperationCompleted;
@@ -42,6 +43,10 @@ namespace Grocery_Panda.localhost {
         private System.Threading.SendOrPostCallback validUserOperationCompleted;
         
         private System.Threading.SendOrPostCallback userChangePasswordOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addstoreOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback shoowstoresOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
@@ -103,6 +108,12 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event userChangePasswordCompletedEventHandler userChangePasswordCompleted;
+        
+        /// <remarks/>
+        public event addstoreCompletedEventHandler addstoreCompleted;
+        
+        /// <remarks/>
+        public event shoowstoresCompletedEventHandler shoowstoresCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -350,6 +361,63 @@ namespace Grocery_Panda.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addstore", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addstore([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Store sto) {
+            this.Invoke("addstore", new object[] {
+                        sto});
+        }
+        
+        /// <remarks/>
+        public void addstoreAsync(Store sto) {
+            this.addstoreAsync(sto, null);
+        }
+        
+        /// <remarks/>
+        public void addstoreAsync(Store sto, object userState) {
+            if ((this.addstoreOperationCompleted == null)) {
+                this.addstoreOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddstoreOperationCompleted);
+            }
+            this.InvokeAsync("addstore", new object[] {
+                        sto}, this.addstoreOperationCompleted, userState);
+        }
+        
+        private void OnaddstoreOperationCompleted(object arg) {
+            if ((this.addstoreCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addstoreCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/shoowstores", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/GroceryPandaService")]
+        public Store[] shoowstores() {
+            object[] results = this.Invoke("shoowstores", new object[0]);
+            return ((Store[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void shoowstoresAsync() {
+            this.shoowstoresAsync(null);
+        }
+        
+        /// <remarks/>
+        public void shoowstoresAsync(object userState) {
+            if ((this.shoowstoresOperationCompleted == null)) {
+                this.shoowstoresOperationCompleted = new System.Threading.SendOrPostCallback(this.OnshoowstoresOperationCompleted);
+            }
+            this.InvokeAsync("shoowstores", new object[0], this.shoowstoresOperationCompleted, userState);
+        }
+        
+        private void OnshoowstoresOperationCompleted(object arg) {
+            if ((this.shoowstoresCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.shoowstoresCompleted(this, new shoowstoresCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetDataUsingDataContract", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public CompositeType GetDataUsingDataContract([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] CompositeType composite) {
@@ -404,6 +472,161 @@ namespace Grocery_Panda.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/GroceryPandaService")]
+    public partial class Store {
+        
+        private string addressField;
+        
+        private User[] customersField;
+        
+        private string nameField;
+        
+        private Product[] productsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Address {
+            get {
+                return this.addressField;
+            }
+            set {
+                this.addressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public User[] Customers {
+            get {
+                return this.customersField;
+            }
+            set {
+                this.customersField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Product[] Products {
+            get {
+                return this.productsField;
+            }
+            set {
+                this.productsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/GroceryPandaService")]
+    public partial class User : Person {
+        
+        private Product[] order_listField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Product[] Order_list {
+            get {
+                return this.order_listField;
+            }
+            set {
+                this.order_listField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/GroceryPandaService")]
+    public partial class Product {
+        
+        private string nameField;
+        
+        private int priceField;
+        
+        private bool priceFieldSpecified;
+        
+        private int quantityField;
+        
+        private bool quantityFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Price {
+            get {
+                return this.priceField;
+            }
+            set {
+                this.priceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PriceSpecified {
+            get {
+                return this.priceFieldSpecified;
+            }
+            set {
+                this.priceFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool QuantitySpecified {
+            get {
+                return this.quantityFieldSpecified;
+            }
+            set {
+                this.quantityFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/GroceryPandaService")]
     public partial class CompositeType {
         
         private bool boolValueField;
@@ -441,6 +664,81 @@ namespace Grocery_Panda.localhost {
             }
             set {
                 this.stringValueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(User))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/GroceryPandaService")]
+    public partial class Person {
+        
+        private string answerField;
+        
+        private string contact_noField;
+        
+        private string passwordField;
+        
+        private string questionField;
+        
+        private string usernameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Answer {
+            get {
+                return this.answerField;
+            }
+            set {
+                this.answerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Contact_no {
+            get {
+                return this.contact_noField;
+            }
+            set {
+                this.contact_noField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                this.passwordField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Question {
+            get {
+                return this.questionField;
+            }
+            set {
+                this.questionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                this.usernameField = value;
             }
         }
     }
@@ -671,6 +969,36 @@ namespace Grocery_Panda.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void addstoreCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void shoowstoresCompletedEventHandler(object sender, shoowstoresCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class shoowstoresCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal shoowstoresCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Store[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Store[])(this.results[0]));
             }
         }
     }

@@ -49,6 +49,18 @@
   <wsdl:message name="IService1_userChangePassword_OutputMessage">
     <wsdl:part name="parameters" element="tns:userChangePasswordResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addstore_InputMessage">
+    <wsdl:part name="parameters" element="tns:addstore" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addstore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addstoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_shoowstores_InputMessage">
+    <wsdl:part name="parameters" element="tns:shoowstores" />
+  </wsdl:message>
+  <wsdl:message name="IService1_shoowstores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:shoowstoresResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -83,6 +95,14 @@
     <wsdl:operation name="userChangePassword">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/userChangePassword" message="tns:IService1_userChangePassword_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/userChangePasswordResponse" message="tns:IService1_userChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addstore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addstore" message="tns:IService1_addstore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addstoreResponse" message="tns:IService1_addstore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="shoowstores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/shoowstores" message="tns:IService1_shoowstores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/shoowstoresResponse" message="tns:IService1_shoowstores_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -147,6 +167,24 @@
     </wsdl:operation>
     <wsdl:operation name="userChangePassword">
       <soap:operation soapAction="http://tempuri.org/IService1/userChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addstore">
+      <soap:operation soapAction="http://tempuri.org/IService1/addstore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="shoowstores">
+      <soap:operation soapAction="http://tempuri.org/IService1/shoowstores" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

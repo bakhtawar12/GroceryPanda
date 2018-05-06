@@ -138,6 +138,9 @@ namespace Grocery_Panda
                 if(valid)
                 {
                     MessageBox.Show("Welcome!");
+                    frmAddStore h = new frmAddStore();
+                    this.Close();
+                    h.Show();
                 } else
                 {
                     MessageBox.Show("wrong username or password!");
