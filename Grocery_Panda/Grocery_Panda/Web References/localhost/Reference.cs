@@ -50,6 +50,10 @@ namespace Grocery_Panda.localhost {
         
         private System.Threading.SendOrPostCallback addStoreProductsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback deleteStoreOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getstoreOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -119,6 +123,12 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event addStoreProductsCompletedEventHandler addStoreProductsCompleted;
+        
+        /// <remarks/>
+        public event deleteStoreCompletedEventHandler deleteStoreCompleted;
+        
+        /// <remarks/>
+        public event getstoreCompletedEventHandler getstoreCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -457,6 +467,66 @@ namespace Grocery_Panda.localhost {
             if ((this.addStoreProductsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.addStoreProductsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/deleteStore", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void deleteStore([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Store s) {
+            this.Invoke("deleteStore", new object[] {
+                        s});
+        }
+        
+        /// <remarks/>
+        public void deleteStoreAsync(Store s) {
+            this.deleteStoreAsync(s, null);
+        }
+        
+        /// <remarks/>
+        public void deleteStoreAsync(Store s, object userState) {
+            if ((this.deleteStoreOperationCompleted == null)) {
+                this.deleteStoreOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteStoreOperationCompleted);
+            }
+            this.InvokeAsync("deleteStore", new object[] {
+                        s}, this.deleteStoreOperationCompleted, userState);
+        }
+        
+        private void OndeleteStoreOperationCompleted(object arg) {
+            if ((this.deleteStoreCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteStoreCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getstore", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Store getstore(int index, [System.Xml.Serialization.XmlIgnoreAttribute()] bool indexSpecified) {
+            object[] results = this.Invoke("getstore", new object[] {
+                        index,
+                        indexSpecified});
+            return ((Store)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getstoreAsync(int index, bool indexSpecified) {
+            this.getstoreAsync(index, indexSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void getstoreAsync(int index, bool indexSpecified, object userState) {
+            if ((this.getstoreOperationCompleted == null)) {
+                this.getstoreOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetstoreOperationCompleted);
+            }
+            this.InvokeAsync("getstore", new object[] {
+                        index,
+                        indexSpecified}, this.getstoreOperationCompleted, userState);
+        }
+        
+        private void OngetstoreOperationCompleted(object arg) {
+            if ((this.getstoreCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getstoreCompleted(this, new getstoreCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1049,6 +1119,36 @@ namespace Grocery_Panda.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void addStoreProductsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void deleteStoreCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void getstoreCompletedEventHandler(object sender, getstoreCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getstoreCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getstoreCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Store Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Store)(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]

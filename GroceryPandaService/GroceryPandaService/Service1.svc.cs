@@ -135,6 +135,24 @@ namespace GroceryPandaService
                 }
             }
         }
+        public void deleteStore(Store s)
+        {
+            int p = 0;
+            foreach (Store sto in StoreDL.Stores)
+            {
+                if (sto.Name == s.Name && sto.Address == s.Address)
+                {
+                    p = StoreDL.Stores.IndexOf(sto);
+                }
+            }
+
+            StoreDL.Stores.RemoveAt(p);
+            
+        }
+        public Store getstore(int index)
+        {
+            return StoreDL.Stores[index];
+        }
     }
 
 }

@@ -46,7 +46,14 @@ namespace GroceryPandaService
 
         void addStoreProducts(Store s, string name, int price1, int quantity1);
 
-        
+        [OperationContract]
+
+        void deleteStore(Store s );
+
+        [OperationContract]
+
+        Store getstore(int index);
+
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);

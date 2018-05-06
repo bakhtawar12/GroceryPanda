@@ -30,16 +30,20 @@
         {
             this.Gvshowallstore = new System.Windows.Forms.DataGridView();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.Column1 = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Gvshowallstore)).BeginInit();
             this.SuspendLayout();
             // 
             // Gvshowallstore
             // 
             this.Gvshowallstore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Gvshowallstore.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
             this.Gvshowallstore.Location = new System.Drawing.Point(22, 34);
             this.Gvshowallstore.Name = "Gvshowallstore";
             this.Gvshowallstore.Size = new System.Drawing.Size(240, 150);
             this.Gvshowallstore.TabIndex = 0;
+            this.Gvshowallstore.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gvshowallstore_CellContentClick);
             // 
             // linkLabel1
             // 
@@ -51,6 +55,13 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Go to Previous Page";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Delete Store";
+            this.Column1.Name = "Column1";
+            this.Column1.Text = "Click Here";
+            this.Column1.UseColumnTextForLinkValue = true;
             // 
             // frmAdminShowStore
             // 
@@ -72,5 +83,6 @@
 
         private System.Windows.Forms.DataGridView Gvshowallstore;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.DataGridViewLinkColumn Column1;
     }
 }

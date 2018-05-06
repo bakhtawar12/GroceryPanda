@@ -67,6 +67,18 @@
   <wsdl:message name="IService1_addStoreProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:addStoreProductsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_deleteStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteStore" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getstore_InputMessage">
+    <wsdl:part name="parameters" element="tns:getstore" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getstore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getstoreResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -113,6 +125,14 @@
     <wsdl:operation name="addStoreProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addStoreProducts" message="tns:IService1_addStoreProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addStoreProductsResponse" message="tns:IService1_addStoreProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteStore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteStore" message="tns:IService1_deleteStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteStoreResponse" message="tns:IService1_deleteStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getstore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getstore" message="tns:IService1_getstore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getstoreResponse" message="tns:IService1_getstore_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -204,6 +224,24 @@
     </wsdl:operation>
     <wsdl:operation name="addStoreProducts">
       <soap:operation soapAction="http://tempuri.org/IService1/addStoreProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteStore">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteStore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getstore">
+      <soap:operation soapAction="http://tempuri.org/IService1/getstore" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

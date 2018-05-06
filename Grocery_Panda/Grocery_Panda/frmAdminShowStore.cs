@@ -31,5 +31,19 @@ namespace Grocery_Panda
             s.DataSource=sc.shoowstores();
             Gvshowallstore.DataSource = s;
         }
+
+        private void Gvshowallstore_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            localhost.Service1 sc = new localhost.Service1();
+            bool speci = false;
+            if (e.ColumnIndex == 0)
+            {
+                localhost.Store gro = sc.getstore(e.RowIndex, speci);
+                sc.deleteStore(gro);
+                BindingSource s = new BindingSource();
+                s.DataSource = sc.shoowstores();
+                Gvshowallstore.DataSource = s;
+            }
+        }
     }
 }
