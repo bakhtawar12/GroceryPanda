@@ -65,7 +65,13 @@ namespace GroceryPandaService
         Product getProduct(string store_name, int index);
 
         [OperationContract]
-        void orderProduct(Product p); 
+        void orderProduct(Product p);
+
+        [OperationContract]
+        string getPrice();
+
+        [OperationContract]
+        List<Product> getOrderList();
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);

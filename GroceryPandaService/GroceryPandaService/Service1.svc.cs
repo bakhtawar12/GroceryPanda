@@ -195,6 +195,20 @@ namespace GroceryPandaService
         {
             UserDL.Current_user.Order_list.Add(p);
         }
-        
+
+        public string getPrice()
+        {
+            int price = 0;
+            foreach(Product p in UserDL.Current_user.Order_list)
+            {
+                price += p.Price;
+            }
+            return price.ToString();
+        }
+
+        public List<Product> getOrderList()
+        {
+            return UserDL.Current_user.Order_list;
+        }
     }
 }

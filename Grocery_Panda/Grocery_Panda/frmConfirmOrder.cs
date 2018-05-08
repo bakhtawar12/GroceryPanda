@@ -23,5 +23,19 @@ namespace Grocery_Panda
             this.Close();
             t.Show();
         }
+
+        private void frmConfirmOrder_Load(object sender, EventArgs e)
+        {
+            localhost.Service1 ser = new localhost.Service1();
+            BindingSource source = new BindingSource();
+            source.DataSource = ser.getOrderList();
+            dataGridView1.DataSource = source;
+            txtBill.Text = ser.getPrice();
+        }
+
+        private void btnConfirmorder_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Order confirmed!");
+        }
     }
 }

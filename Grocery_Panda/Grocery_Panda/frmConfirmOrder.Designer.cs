@@ -52,6 +52,7 @@
             this.btnConfirmorder.TabIndex = 1;
             this.btnConfirmorder.Text = "Confirm Order";
             this.btnConfirmorder.UseVisualStyleBackColor = true;
+            this.btnConfirmorder.Click += new System.EventHandler(this.btnConfirmorder_Click);
             // 
             // lbMainPage
             // 
@@ -92,6 +93,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmConfirmOrder";
             this.Text = "Confirm Order";
+            this.Load += new System.EventHandler(this.frmConfirmOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

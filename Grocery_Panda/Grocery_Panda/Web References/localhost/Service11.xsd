@@ -233,17 +233,41 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="getPrice">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPriceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPriceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOrderListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GroceryPandaService" minOccurs="0" name="getOrderListResult" nillable="true" type="q10:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GroceryPandaService" minOccurs="0" name="composite" nillable="true" type="q10:CompositeType" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GroceryPandaService" minOccurs="0" name="composite" nillable="true" type="q11:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GroceryPandaService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q11:CompositeType" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GroceryPandaService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q12:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
