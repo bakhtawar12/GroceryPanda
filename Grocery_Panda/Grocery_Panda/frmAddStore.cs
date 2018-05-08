@@ -43,5 +43,12 @@ namespace Grocery_Panda
             ad.Show();
             this.Hide();
         }
+
+        private void lbback_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmMain r = new frmMain();
+            this.Hide();
+            r.Show();
+        }
     }
 }

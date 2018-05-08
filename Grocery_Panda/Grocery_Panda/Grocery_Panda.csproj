@@ -81,6 +81,12 @@
     <Compile Include="frmAdminRegistration.Designer.cs">
       <DependentUpon>frmAdminRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConfirmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmOrder.Designer.cs">
+      <DependentUpon>frmConfirmOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmForgotPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdminShowStore.resx">
       <DependentUpon>frmAdminShowStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmOrder.resx">
+      <DependentUpon>frmConfirmOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmForgotPass.resx">
       <DependentUpon>frmForgotPass.cs</DependentUpon>

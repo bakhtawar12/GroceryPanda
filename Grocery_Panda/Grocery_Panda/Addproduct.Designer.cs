@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lbback = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -127,11 +128,23 @@
             this.linkLabel1.Text = "Show Product";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // lbback
+            // 
+            this.lbback.AutoSize = true;
+            this.lbback.Location = new System.Drawing.Point(105, 249);
+            this.lbback.Name = "lbback";
+            this.lbback.Size = new System.Drawing.Size(32, 13);
+            this.lbback.TabIndex = 10;
+            this.lbback.TabStop = true;
+            this.lbback.Text = "Back";
+            this.lbback.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbback_LinkClicked);
+            // 
             // Addproduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.lbback);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
@@ -162,5 +175,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lbback;
     }
 }

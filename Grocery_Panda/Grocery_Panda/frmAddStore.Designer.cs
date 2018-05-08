@@ -35,6 +35,7 @@
             this.lbProducts = new System.Windows.Forms.LinkLabel();
             this.btnAddStores = new System.Windows.Forms.Button();
             this.btnViewStores = new System.Windows.Forms.Button();
+            this.lbback = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -100,11 +101,23 @@
             this.btnViewStores.UseVisualStyleBackColor = true;
             this.btnViewStores.Click += new System.EventHandler(this.btnViewStores_Click);
             // 
+            // lbback
+            // 
+            this.lbback.AutoSize = true;
+            this.lbback.Location = new System.Drawing.Point(87, 239);
+            this.lbback.Name = "lbback";
+            this.lbback.Size = new System.Drawing.Size(32, 13);
+            this.lbback.TabIndex = 10;
+            this.lbback.TabStop = true;
+            this.lbback.Text = "Back";
+            this.lbback.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbback_LinkClicked);
+            // 
             // frmAddStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.lbback);
             this.Controls.Add(this.btnViewStores);
             this.Controls.Add(this.btnAddStores);
             this.Controls.Add(this.lbProducts);
@@ -128,5 +141,6 @@
         private System.Windows.Forms.LinkLabel lbProducts;
         private System.Windows.Forms.Button btnAddStores;
         private System.Windows.Forms.Button btnViewStores;
+        private System.Windows.Forms.LinkLabel lbback;
     }
 }

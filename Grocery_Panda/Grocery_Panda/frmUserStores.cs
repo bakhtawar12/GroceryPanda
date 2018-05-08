@@ -27,12 +27,46 @@ namespace Grocery_Panda
             }
         }
 
-        private void btShowProducts_Click(object sender, EventArgs e)
+        private void lbshoworder_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmConfirmOrder y = new frmConfirmOrder();
+            this.Close();
+            y.Show();
+        }
+
+        private void btnAddtoOrder_Click(object sender, EventArgs e)
         {
             localhost.Service1 ser = new localhost.Service1();
-            BindingSource source = new BindingSource();
-            source.DataSource = ser.getStoreProducts(cmbStores.Text);
-            dataGridViewProdcuts.DataSource = source;
+            foreach (localhost.Store str in ser.shoowstores())
+            {
+                if (str.Name == cmbStores.Text)
+                {
+                    foreach (localhost.Product p in str.Products)
+                    {
+                        if(p.Name == cmbProduts.Text)
+                        {
+                            ser.orderProduct(p);
+                            MessageBox.Show("Product added to order list!");
+                        }
+                    }
+                }
+            }
+        }
+
+        private void cmbStores_TextChanged(object sender, EventArgs e)
+        {
+            localhost.Service1 ser = new localhost.Service1();
+            foreach(localhost.Store str in ser.shoowstores())
+            {
+                if (str.Name == cmbStores.Text)
+                {
+                    foreach (localhost.Product p in str.Products)
+                    {
+                        cmbProduts.Items.Add(p.Name);
+                    }
+                }
+            }
+
         }
     }
 }

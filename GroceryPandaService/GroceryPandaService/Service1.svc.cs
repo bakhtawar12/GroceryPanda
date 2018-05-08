@@ -185,5 +185,16 @@ namespace GroceryPandaService
             }
             return products;
         }
+
+        public Product getProduct(string store_name, int index)
+        {
+            return getStoreProducts(store_name)[index];
+        }
+
+        public void orderProduct(Product p)
+        {
+            UserDL.Current_user.Order_list.Add(p);
+        }
+        
     }
 }

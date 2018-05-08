@@ -7,7 +7,7 @@ namespace GroceryPandaService
 {
     public class User : Person
     {
-        private List<Product> order_list;
+        private List<Product> order_list = new List<Product>();
 
         public List<Product> Order_list
         {

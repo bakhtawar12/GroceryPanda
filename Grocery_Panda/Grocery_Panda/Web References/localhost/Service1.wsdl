@@ -91,6 +91,18 @@
   <wsdl:message name="IService1_getStoreProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:getStoreProductsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProduct" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_orderProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:orderProduct" />
+  </wsdl:message>
+  <wsdl:message name="IService1_orderProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:orderProductResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -153,6 +165,14 @@
     <wsdl:operation name="getStoreProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getStoreProducts" message="tns:IService1_getStoreProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getStoreProductsResponse" message="tns:IService1_getStoreProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getProduct" message="tns:IService1_getProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getProductResponse" message="tns:IService1_getProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="orderProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/orderProduct" message="tns:IService1_orderProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/orderProductResponse" message="tns:IService1_orderProduct_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -280,6 +300,24 @@
     </wsdl:operation>
     <wsdl:operation name="getStoreProducts">
       <soap:operation soapAction="http://tempuri.org/IService1/getStoreProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <soap:operation soapAction="http://tempuri.org/IService1/getProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderProduct">
+      <soap:operation soapAction="http://tempuri.org/IService1/orderProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -58,6 +58,10 @@ namespace Grocery_Panda.localhost {
         
         private System.Threading.SendOrPostCallback getStoreProductsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getProductOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback orderProductOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -139,6 +143,12 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event getStoreProductsCompletedEventHandler getStoreProductsCompleted;
+        
+        /// <remarks/>
+        public event getProductCompletedEventHandler getProductCompleted;
+        
+        /// <remarks/>
+        public event orderProductCompletedEventHandler orderProductCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -598,6 +608,68 @@ namespace Grocery_Panda.localhost {
             if ((this.getStoreProductsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getStoreProductsCompleted(this, new getStoreProductsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getProduct", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Product getProduct([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string store_name, int index, [System.Xml.Serialization.XmlIgnoreAttribute()] bool indexSpecified) {
+            object[] results = this.Invoke("getProduct", new object[] {
+                        store_name,
+                        index,
+                        indexSpecified});
+            return ((Product)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getProductAsync(string store_name, int index, bool indexSpecified) {
+            this.getProductAsync(store_name, index, indexSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void getProductAsync(string store_name, int index, bool indexSpecified, object userState) {
+            if ((this.getProductOperationCompleted == null)) {
+                this.getProductOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetProductOperationCompleted);
+            }
+            this.InvokeAsync("getProduct", new object[] {
+                        store_name,
+                        index,
+                        indexSpecified}, this.getProductOperationCompleted, userState);
+        }
+        
+        private void OngetProductOperationCompleted(object arg) {
+            if ((this.getProductCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getProductCompleted(this, new getProductCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/orderProduct", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void orderProduct([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Product p) {
+            this.Invoke("orderProduct", new object[] {
+                        p});
+        }
+        
+        /// <remarks/>
+        public void orderProductAsync(Product p) {
+            this.orderProductAsync(p, null);
+        }
+        
+        /// <remarks/>
+        public void orderProductAsync(Product p, object userState) {
+            if ((this.orderProductOperationCompleted == null)) {
+                this.orderProductOperationCompleted = new System.Threading.SendOrPostCallback(this.OnorderProductOperationCompleted);
+            }
+            this.InvokeAsync("orderProduct", new object[] {
+                        p}, this.orderProductOperationCompleted, userState);
+        }
+        
+        private void OnorderProductOperationCompleted(object arg) {
+            if ((this.orderProductCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.orderProductCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1250,6 +1322,36 @@ namespace Grocery_Panda.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void getProductCompletedEventHandler(object sender, getProductCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getProductCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getProductCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Product Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Product)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void orderProductCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]

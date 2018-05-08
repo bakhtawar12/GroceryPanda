@@ -20,3 +20,4 @@ D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Pand
 D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmAdminHome.resources
 D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.ShowProducts.resources
 D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmUserStores.resources
+D:\Grocery Panda\GroceryPanda\Grocery_Panda\Grocery_Panda\obj\Debug\Grocery_Panda.frmConfirmOrder.resources
