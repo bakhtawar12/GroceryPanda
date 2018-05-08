@@ -59,6 +59,9 @@ namespace GroceryPandaService
         void getproduct(String s, Product pro);
 
         [OperationContract]
+        List<Product> getStoreProducts(string store_name);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

@@ -108,6 +108,12 @@
     <Compile Include="frmUserResetPass.Designer.cs">
       <DependentUpon>frmUserResetPass.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUserStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserStores.Designer.cs">
+      <DependentUpon>frmUserStores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowProducts.cs">
@@ -154,6 +160,9 @@
     <EmbeddedResource Include="frmUserResetPass.resx">
       <DependentUpon>frmUserResetPass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUserStores.resx">
+      <DependentUpon>frmUserStores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -176,6 +185,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Web References\localhost\CompositeType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\Product.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\localhost\Reference.map">

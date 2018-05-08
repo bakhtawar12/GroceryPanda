@@ -47,6 +47,9 @@ namespace Grocery_Panda
                 if (valid)
                 {
                     MessageBox.Show("Welcome!");
+                    frmUserStores temp = new frmUserStores();
+                    temp.Show();
+                    this.Close();
                 }
                 else
                 {

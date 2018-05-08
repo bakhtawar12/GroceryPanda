@@ -172,5 +172,18 @@ namespace GroceryPandaService
                 }
             }
         }
+
+        public List<Product> getStoreProducts(string store_name)
+        {
+            List<Product> products = new List<Product>();
+            foreach(Store s in StoreDL.Stores)
+            {
+                if(s.Name == store_name)
+                {
+                    products = s.Products;
+                }
+            }
+            return products;
+        }
     }
 }

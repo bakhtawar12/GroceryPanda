@@ -56,6 +56,8 @@ namespace Grocery_Panda.localhost {
         
         private System.Threading.SendOrPostCallback getproductOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getStoreProductsOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -134,6 +136,9 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event getproductCompletedEventHandler getproductCompleted;
+        
+        /// <remarks/>
+        public event getStoreProductsCompletedEventHandler getStoreProductsCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -562,6 +567,37 @@ namespace Grocery_Panda.localhost {
             if ((this.getproductCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getproductCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/getStoreProducts", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/GroceryPandaService")]
+        public Product[] getStoreProducts([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string store_name) {
+            object[] results = this.Invoke("getStoreProducts", new object[] {
+                        store_name});
+            return ((Product[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getStoreProductsAsync(string store_name) {
+            this.getStoreProductsAsync(store_name, null);
+        }
+        
+        /// <remarks/>
+        public void getStoreProductsAsync(string store_name, object userState) {
+            if ((this.getStoreProductsOperationCompleted == null)) {
+                this.getStoreProductsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetStoreProductsOperationCompleted);
+            }
+            this.InvokeAsync("getStoreProducts", new object[] {
+                        store_name}, this.getStoreProductsOperationCompleted, userState);
+        }
+        
+        private void OngetStoreProductsOperationCompleted(object arg) {
+            if ((this.getStoreProductsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getStoreProductsCompleted(this, new getStoreProductsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1188,6 +1224,32 @@ namespace Grocery_Panda.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void getproductCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void getStoreProductsCompletedEventHandler(object sender, getStoreProductsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getStoreProductsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getStoreProductsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Product[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Product[])(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
