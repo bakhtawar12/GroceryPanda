@@ -257,6 +257,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="addCustomerToStore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="store_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addCustomerToStoreResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="clearCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="store_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customer_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="clearCustomerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>

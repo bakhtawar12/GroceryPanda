@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnOrders = new System.Windows.Forms.Button();
             this.lbBack = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
@@ -43,15 +43,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnOrders
             // 
-            this.button2.Location = new System.Drawing.Point(68, 135);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Add Product";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnOrders.Location = new System.Drawing.Point(68, 135);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Size = new System.Drawing.Size(75, 23);
+            this.btnOrders.TabIndex = 1;
+            this.btnOrders.Text = "Orders";
+            this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.Click += new System.EventHandler(this.button2_Click);
             // 
             // lbBack
             // 
@@ -70,7 +70,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.lbBack);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.button1);
             this.Name = "frmAdminHome";
             this.Text = "frmAdminHome";
@@ -82,7 +82,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.LinkLabel lbBack;
     }
 }

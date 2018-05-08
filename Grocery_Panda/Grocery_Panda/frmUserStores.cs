@@ -12,6 +12,7 @@ namespace Grocery_Panda
 {
     public partial class frmUserStores : Form
     {
+        private bool is_customer = false;
         public frmUserStores()
         {
             InitializeComponent();
@@ -46,6 +47,11 @@ namespace Grocery_Panda
                         if(p.Name == cmbProduts.Text)
                         {
                             ser.orderProduct(p);
+                            if (!is_customer)
+                            {
+                                ser.addCustomerToStore(cmbStores.Text);
+                                is_customer = true;
+                            }
                             MessageBox.Show("Product added to order list!");
                         }
                     }
@@ -55,6 +61,7 @@ namespace Grocery_Panda
 
         private void cmbStores_TextChanged(object sender, EventArgs e)
         {
+            is_customer = false;
             localhost.Service1 ser = new localhost.Service1();
             foreach(localhost.Store str in ser.shoowstores())
             {

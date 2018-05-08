@@ -66,6 +66,10 @@ namespace Grocery_Panda.localhost {
         
         private System.Threading.SendOrPostCallback getOrderListOperationCompleted;
         
+        private System.Threading.SendOrPostCallback addCustomerToStoreOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback clearCustomerOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -159,6 +163,12 @@ namespace Grocery_Panda.localhost {
         
         /// <remarks/>
         public event getOrderListCompletedEventHandler getOrderListCompleted;
+        
+        /// <remarks/>
+        public event addCustomerToStoreCompletedEventHandler addCustomerToStoreCompleted;
+        
+        /// <remarks/>
+        public event clearCustomerCompletedEventHandler clearCustomerCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -737,6 +747,64 @@ namespace Grocery_Panda.localhost {
             if ((this.getOrderListCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getOrderListCompleted(this, new getOrderListCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/addCustomerToStore", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addCustomerToStore([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string store_name) {
+            this.Invoke("addCustomerToStore", new object[] {
+                        store_name});
+        }
+        
+        /// <remarks/>
+        public void addCustomerToStoreAsync(string store_name) {
+            this.addCustomerToStoreAsync(store_name, null);
+        }
+        
+        /// <remarks/>
+        public void addCustomerToStoreAsync(string store_name, object userState) {
+            if ((this.addCustomerToStoreOperationCompleted == null)) {
+                this.addCustomerToStoreOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddCustomerToStoreOperationCompleted);
+            }
+            this.InvokeAsync("addCustomerToStore", new object[] {
+                        store_name}, this.addCustomerToStoreOperationCompleted, userState);
+        }
+        
+        private void OnaddCustomerToStoreOperationCompleted(object arg) {
+            if ((this.addCustomerToStoreCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addCustomerToStoreCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/clearCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void clearCustomer([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string store_name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string customer_name) {
+            this.Invoke("clearCustomer", new object[] {
+                        store_name,
+                        customer_name});
+        }
+        
+        /// <remarks/>
+        public void clearCustomerAsync(string store_name, string customer_name) {
+            this.clearCustomerAsync(store_name, customer_name, null);
+        }
+        
+        /// <remarks/>
+        public void clearCustomerAsync(string store_name, string customer_name, object userState) {
+            if ((this.clearCustomerOperationCompleted == null)) {
+                this.clearCustomerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnclearCustomerOperationCompleted);
+            }
+            this.InvokeAsync("clearCustomer", new object[] {
+                        store_name,
+                        customer_name}, this.clearCustomerOperationCompleted, userState);
+        }
+        
+        private void OnclearCustomerOperationCompleted(object arg) {
+            if ((this.clearCustomerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.clearCustomerCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1471,6 +1539,14 @@ namespace Grocery_Panda.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void addCustomerToStoreCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void clearCustomerCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]

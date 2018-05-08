@@ -11,8 +11,8 @@ namespace GroceryPandaService
         
         string name;
         string address;
-        List<Product> products=new List<Product>();
-        List<User> customers=new List<User>();
+        List<Product> products = new List<Product>();
+        List<User> customers = new List<User>();
 
         [DataMember]
         public string Name

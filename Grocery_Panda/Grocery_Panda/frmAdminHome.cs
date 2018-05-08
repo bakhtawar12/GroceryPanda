@@ -26,7 +26,7 @@ namespace Grocery_Panda
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Addproduct h = new Addproduct();
+            frmOrders h = new frmOrders();
             h.Show();
             this.Hide();
         }

@@ -210,5 +210,44 @@ namespace GroceryPandaService
         {
             return UserDL.Current_user.Order_list;
         }
+
+        public void addCustomerToStore(string store_name)
+        {
+            foreach(Store s in StoreDL.Stores)
+            {
+                if(s.Name == store_name)
+                {
+                    if(s.Customers == null)
+                    {
+                        s.Customers = new List<User>();
+                    }
+                    s.Customers.Add(UserDL.Current_user);
+                }
+            }
+        }
+
+        public void clearCustomer(string store_name, string customer_name)
+        {
+            int i = 0;
+            foreach(Store s in StoreDL.Stores)
+            {
+                if(s.Name == store_name)
+                {
+                    i = 0;
+                    foreach(User u in s.Customers)
+                    {
+                        if (u.Username == customer_name) {
+                            u.Order_list.Clear();
+                            break;
+                        }
+                        i++;
+                    }
+                }
+                if (s.Customers != null)
+                {
+                    s.Customers.RemoveAt(i);
+                }
+            }
+        }
     }
 }
