@@ -34,9 +34,9 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(105, 79);
+            this.btnAdmin.Location = new System.Drawing.Point(158, 84);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdmin.Size = new System.Drawing.Size(75, 34);
             this.btnAdmin.TabIndex = 0;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.UseVisualStyleBackColor = true;
@@ -44,9 +44,9 @@
             // 
             // btnUser
             // 
-            this.btnUser.Location = new System.Drawing.Point(105, 168);
+            this.btnUser.Location = new System.Drawing.Point(158, 173);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(75, 23);
+            this.btnUser.Size = new System.Drawing.Size(75, 34);
             this.btnUser.TabIndex = 1;
             this.btnUser.Text = "User";
             this.btnUser.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(406, 326);
             this.Controls.Add(this.btnUser);
             this.Controls.Add(this.btnAdmin);
             this.Name = "frmMain";

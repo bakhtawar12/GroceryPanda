@@ -38,7 +38,7 @@ namespace Grocery_Panda
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(185, 197);
+            this.btnLogin.Location = new System.Drawing.Point(283, 194);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(74, 23);
             this.btnLogin.TabIndex = 17;
@@ -49,7 +49,7 @@ namespace Grocery_Panda
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 95);
+            this.label4.Location = new System.Drawing.Point(96, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 16;
@@ -58,7 +58,7 @@ namespace Grocery_Panda
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 30);
+            this.label1.Location = new System.Drawing.Point(96, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 13;
@@ -66,14 +66,14 @@ namespace Grocery_Panda
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(106, 88);
+            this.txtPassword.Location = new System.Drawing.Point(184, 113);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 11;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(106, 24);
+            this.txtName.Location = new System.Drawing.Point(184, 49);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 9;
@@ -81,7 +81,7 @@ namespace Grocery_Panda
             // lbForgotPass
             // 
             this.lbForgotPass.AutoSize = true;
-            this.lbForgotPass.Location = new System.Drawing.Point(112, 127);
+            this.lbForgotPass.Location = new System.Drawing.Point(229, 275);
             this.lbForgotPass.Name = "lbForgotPass";
             this.lbForgotPass.Size = new System.Drawing.Size(84, 13);
             this.lbForgotPass.TabIndex = 18;
@@ -92,7 +92,7 @@ namespace Grocery_Panda
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(21, 221);
+            this.linkLabel1.Location = new System.Drawing.Point(44, 321);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(46, 13);
             this.linkLabel1.TabIndex = 19;
@@ -102,7 +102,7 @@ namespace Grocery_Panda
             // 
             // FrmAdminLogin
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(421, 354);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lbForgotPass);
             this.Controls.Add(this.btnLogin);

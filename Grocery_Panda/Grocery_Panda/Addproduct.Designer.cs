@@ -39,12 +39,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lbback = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Location = new System.Drawing.Point(127, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
@@ -53,7 +54,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(105, 12);
+            this.comboBox1.Location = new System.Drawing.Point(220, 36);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
@@ -61,21 +62,21 @@
             // 
             // txtproductname
             // 
-            this.txtproductname.Location = new System.Drawing.Point(105, 51);
+            this.txtproductname.Location = new System.Drawing.Point(220, 75);
             this.txtproductname.Name = "txtproductname";
             this.txtproductname.Size = new System.Drawing.Size(100, 20);
             this.txtproductname.TabIndex = 2;
             // 
             // txtprice
             // 
-            this.txtprice.Location = new System.Drawing.Point(105, 92);
+            this.txtprice.Location = new System.Drawing.Point(220, 116);
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(100, 20);
             this.txtprice.TabIndex = 3;
             // 
             // txtquantity
             // 
-            this.txtquantity.Location = new System.Drawing.Point(105, 131);
+            this.txtquantity.Location = new System.Drawing.Point(220, 155);
             this.txtquantity.Name = "txtquantity";
             this.txtquantity.Size = new System.Drawing.Size(100, 20);
             this.txtquantity.TabIndex = 4;
@@ -83,7 +84,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 58);
+            this.label2.Location = new System.Drawing.Point(127, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 5;
@@ -92,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 99);
+            this.label3.Location = new System.Drawing.Point(127, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 6;
@@ -101,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 138);
+            this.label4.Location = new System.Drawing.Point(127, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 7;
@@ -109,7 +110,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(105, 195);
+            this.button1.Location = new System.Drawing.Point(326, 220);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -120,7 +121,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 200);
+            this.linkLabel1.Location = new System.Drawing.Point(199, 301);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(74, 13);
             this.linkLabel1.TabIndex = 9;
@@ -131,7 +132,7 @@
             // lbback
             // 
             this.lbback.AutoSize = true;
-            this.lbback.Location = new System.Drawing.Point(105, 249);
+            this.lbback.Location = new System.Drawing.Point(11, 348);
             this.lbback.Name = "lbback";
             this.lbback.Size = new System.Drawing.Size(32, 13);
             this.lbback.TabIndex = 10;
@@ -139,11 +140,23 @@
             this.lbback.Text = "Back";
             this.lbback.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbback_LinkClicked);
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(409, 348);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(40, 13);
+            this.linkLabel2.TabIndex = 11;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Logout";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // Addproduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(461, 370);
+            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.lbback);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button1);
@@ -176,5 +189,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel lbback;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

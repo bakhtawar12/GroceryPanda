@@ -38,8 +38,8 @@ namespace Grocery_Panda
             bool speci = false;
             if (e.ColumnIndex == 0)
             {
+
                 localhost.Store storeO = sc.getstore(e.RowIndex, speci);
-                
                 localhost.Store gro = sc.getstore(e.RowIndex, speci);
                 sc.deleteStore(gro);
                 BindingSource s = new BindingSource();

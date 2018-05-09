@@ -49,21 +49,21 @@ namespace Grocery_Panda
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(111, 25);
+            this.txtName.Location = new System.Drawing.Point(241, 26);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 0;
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(111, 65);
+            this.txtNewPass.Location = new System.Drawing.Point(241, 85);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(100, 20);
             this.txtNewPass.TabIndex = 1;
             // 
             // txtAnswer
             // 
-            this.txtAnswer.Location = new System.Drawing.Point(111, 155);
+            this.txtAnswer.Location = new System.Drawing.Point(241, 203);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(100, 20);
             this.txtAnswer.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace Grocery_Panda
             "What is your hobby?",
             "What is your favourite game?",
             "What is your favourite day?"});
-            this.cmbQuestion.Location = new System.Drawing.Point(111, 109);
+            this.cmbQuestion.Location = new System.Drawing.Point(241, 142);
             this.cmbQuestion.Name = "cmbQuestion";
             this.cmbQuestion.Size = new System.Drawing.Size(121, 21);
             this.cmbQuestion.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace Grocery_Panda
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 31);
+            this.label1.Location = new System.Drawing.Point(153, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 4;
@@ -93,7 +93,7 @@ namespace Grocery_Panda
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 71);
+            this.label2.Location = new System.Drawing.Point(144, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 5;
@@ -102,7 +102,7 @@ namespace Grocery_Panda
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 116);
+            this.label3.Location = new System.Drawing.Point(153, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 6;
@@ -111,7 +111,7 @@ namespace Grocery_Panda
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 161);
+            this.label4.Location = new System.Drawing.Point(162, 209);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 7;
@@ -119,7 +119,7 @@ namespace Grocery_Panda
             // 
             // btnResetPass
             // 
-            this.btnResetPass.Location = new System.Drawing.Point(173, 215);
+            this.btnResetPass.Location = new System.Drawing.Point(379, 301);
             this.btnResetPass.Name = "btnResetPass";
             this.btnResetPass.Size = new System.Drawing.Size(99, 23);
             this.btnResetPass.TabIndex = 8;
@@ -130,7 +130,7 @@ namespace Grocery_Panda
             // lbLogin
             // 
             this.lbLogin.AutoSize = true;
-            this.lbLogin.Location = new System.Drawing.Point(35, 215);
+            this.lbLogin.Location = new System.Drawing.Point(29, 344);
             this.lbLogin.Name = "lbLogin";
             this.lbLogin.Size = new System.Drawing.Size(33, 13);
             this.lbLogin.TabIndex = 9;
@@ -140,7 +140,7 @@ namespace Grocery_Panda
             // 
             // frmForgotPass
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(490, 379);
             this.Controls.Add(this.lbLogin);
             this.Controls.Add(this.btnResetPass);
             this.Controls.Add(this.label4);

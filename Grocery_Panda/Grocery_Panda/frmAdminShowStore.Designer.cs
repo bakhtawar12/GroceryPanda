@@ -36,19 +36,20 @@
             // 
             // Gvshowallstore
             // 
+            this.Gvshowallstore.AllowUserToDeleteRows = false;
             this.Gvshowallstore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Gvshowallstore.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
             this.Gvshowallstore.Location = new System.Drawing.Point(22, 34);
             this.Gvshowallstore.Name = "Gvshowallstore";
-            this.Gvshowallstore.Size = new System.Drawing.Size(240, 150);
+            this.Gvshowallstore.Size = new System.Drawing.Size(477, 294);
             this.Gvshowallstore.TabIndex = 0;
             this.Gvshowallstore.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gvshowallstore_CellContentClick);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(101, 219);
+            this.linkLabel1.Location = new System.Drawing.Point(209, 343);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(105, 13);
             this.linkLabel1.TabIndex = 1;
@@ -58,16 +59,18 @@
             // 
             // Column1
             // 
+            this.Column1.ActiveLinkColor = System.Drawing.Color.DarkRed;
             this.Column1.HeaderText = "Delete Store";
+            this.Column1.LinkColor = System.Drawing.Color.Red;
             this.Column1.Name = "Column1";
-            this.Column1.Text = "Click Here";
+            this.Column1.Text = "Delete";
             this.Column1.UseColumnTextForLinkValue = true;
             // 
             // frmAdminShowStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(521, 381);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.Gvshowallstore);
             this.Name = "frmAdminShowStore";

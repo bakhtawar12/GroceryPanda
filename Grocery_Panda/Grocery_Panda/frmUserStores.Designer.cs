@@ -31,11 +31,10 @@
             this.cmbStores = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddtoOrder = new System.Windows.Forms.Button();
-            this.lbLogout = new System.Windows.Forms.LinkLabel();
-            this.lbViewOrder = new System.Windows.Forms.LinkLabel();
             this.lbshoworder = new System.Windows.Forms.LinkLabel();
             this.cmbProduts = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // cmbStores
@@ -58,7 +57,7 @@
             // 
             // btnAddtoOrder
             // 
-            this.btnAddtoOrder.Location = new System.Drawing.Point(331, 162);
+            this.btnAddtoOrder.Location = new System.Drawing.Point(281, 166);
             this.btnAddtoOrder.Name = "btnAddtoOrder";
             this.btnAddtoOrder.Size = new System.Drawing.Size(75, 23);
             this.btnAddtoOrder.TabIndex = 3;
@@ -66,30 +65,10 @@
             this.btnAddtoOrder.UseVisualStyleBackColor = true;
             this.btnAddtoOrder.Click += new System.EventHandler(this.btnAddtoOrder_Click);
             // 
-            // lbLogout
-            // 
-            this.lbLogout.AutoSize = true;
-            this.lbLogout.Location = new System.Drawing.Point(13, 308);
-            this.lbLogout.Name = "lbLogout";
-            this.lbLogout.Size = new System.Drawing.Size(43, 13);
-            this.lbLogout.TabIndex = 4;
-            this.lbLogout.TabStop = true;
-            this.lbLogout.Text = "Log out";
-            // 
-            // lbViewOrder
-            // 
-            this.lbViewOrder.AutoSize = true;
-            this.lbViewOrder.Location = new System.Drawing.Point(365, 299);
-            this.lbViewOrder.Name = "lbViewOrder";
-            this.lbViewOrder.Size = new System.Drawing.Size(59, 13);
-            this.lbViewOrder.TabIndex = 5;
-            this.lbViewOrder.TabStop = true;
-            this.lbViewOrder.Text = "View Order";
-            // 
             // lbshoworder
             // 
             this.lbshoworder.AutoSize = true;
-            this.lbshoworder.Location = new System.Drawing.Point(184, 308);
+            this.lbshoworder.Location = new System.Drawing.Point(78, 236);
             this.lbshoworder.Name = "lbshoworder";
             this.lbshoworder.Size = new System.Drawing.Size(88, 13);
             this.lbshoworder.TabIndex = 7;
@@ -114,16 +93,26 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Product";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(316, 268);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(40, 13);
+            this.linkLabel1.TabIndex = 10;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Logout";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // frmUserStores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 333);
+            this.ClientSize = new System.Drawing.Size(393, 322);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbProduts);
             this.Controls.Add(this.lbshoworder);
-            this.Controls.Add(this.lbViewOrder);
-            this.Controls.Add(this.lbLogout);
             this.Controls.Add(this.btnAddtoOrder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbStores);
@@ -140,10 +129,9 @@
         private System.Windows.Forms.ComboBox cmbStores;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddtoOrder;
-        private System.Windows.Forms.LinkLabel lbLogout;
-        private System.Windows.Forms.LinkLabel lbViewOrder;
         private System.Windows.Forms.LinkLabel lbshoworder;
         private System.Windows.Forms.ComboBox cmbProduts;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

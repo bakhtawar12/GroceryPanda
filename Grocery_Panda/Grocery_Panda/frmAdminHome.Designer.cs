@@ -35,7 +35,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(68, 64);
+            this.button1.Location = new System.Drawing.Point(187, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // btnOrders
             // 
-            this.btnOrders.Location = new System.Drawing.Point(68, 135);
+            this.btnOrders.Location = new System.Drawing.Point(187, 158);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(75, 23);
             this.btnOrders.TabIndex = 1;
@@ -56,7 +56,7 @@
             // lbBack
             // 
             this.lbBack.AutoSize = true;
-            this.lbBack.Location = new System.Drawing.Point(110, 236);
+            this.lbBack.Location = new System.Drawing.Point(229, 259);
             this.lbBack.Name = "lbBack";
             this.lbBack.Size = new System.Drawing.Size(32, 13);
             this.lbBack.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(469, 373);
             this.Controls.Add(this.lbBack);
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.button1);
